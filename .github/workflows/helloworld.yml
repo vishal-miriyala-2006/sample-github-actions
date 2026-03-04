@@ -17,9 +17,15 @@ jobs:
     steps:
       - name: "push is triggered"
         run: echo "push push push push "
-  on_pull-request:
+  on_pull_request:
     if : github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: "pull request is triggered"
         run: echo "pull pull pull pull "
+  on_workflow_dispatch:
+    if : github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "workflow_dispatch"
+        run: echo "workflow_dispatch is successful plzz"
